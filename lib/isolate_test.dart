@@ -72,15 +72,20 @@ Future<bool> runInIsolate(Uri path, bool checked) async {
   // If errors is never called then the isolate exited without errors
   var success = true;
 
-  errors.first.then((_) {
+  errors.listen((_) {
     success = false;
   });
 
   // Wait for the isolate to complete
   await completed.first;
 
-  // Make sure the isolate shuts down
-  isolate.kill(priority: Isolate.IMMEDIATE);
+  // Close the ports so the main isolate will shut down
+  //
+  // One requirement for isolates being able to shut down is that all
+  // ReceivePorts need to be terminated.
+  completed.close();
+  errors.close();
 
+  // Return the results
   return success;
 }
