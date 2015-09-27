@@ -43,22 +43,17 @@ void testInIsolate(String description,
                    bool checked: _checked})
 {
   test(description, () async {
-    await expectIsolateResult(path, matcher: matcher, checked: checked);
+    var actual = await runInIsolate(path, checked);
+    expect(actual, matcher);
   });
 }
 
-/// Runs a test at the [path] within an isolate and checks whether it
+/// Runs a test at the [path] within an isolate and returns whether it
 /// completed successfully.
-///
-/// The isolate either ran successfully or failed. By default it is assumed
-/// that the isolate should exit without error. If this isn't the desired
-/// behavior then [matcher] should be set to false.
 ///
 /// Additionally [checked] mode can be specified when running the test within
 /// the isolate.
-Future<Null> expectIsolateResult(Uri path,
-                                {dynamic matcher: _matcher,
-                                 bool checked: _checked}) async {
+Future<bool> runInIsolate(Uri path, bool checked) async {
   // Create receive ports for isolate communications
   var completed = new ReceivePort();
   var errors = new ReceivePort();
@@ -87,5 +82,5 @@ Future<Null> expectIsolateResult(Uri path,
   // Make sure the isolate shuts down
   isolate.kill(priority: Isolate.IMMEDIATE);
 
-  expect(success, matcher);
+  return success;
 }
