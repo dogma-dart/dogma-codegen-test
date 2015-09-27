@@ -83,5 +83,9 @@ Future<Null> expectIsolateResult(Uri path,
 
   // Wait for the isolate to complete
   await completed.first;
+
+  // Make sure the isolate shuts down
+  isolate.kill(priority: Isolate.IMMEDIATE);
+
   expect(success, matcher);
 }
