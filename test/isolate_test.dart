@@ -4,7 +4,7 @@
 // the LICENSE file.
 
 /// Tests running test code in isolates.
-library dogma_codegen_test.isolate_test;
+library dogma_codegen_test.test.isolate_test;
 
 //---------------------------------------------------------------------
 // Imports

@@ -4,7 +4,7 @@
 // the LICENSE file.
 
 /// Allows a test to wait.
-library dogma_codegen_test.isolates.wait;
+library dogma_codegen_test.test.isolates.wait;
 
 //---------------------------------------------------------------------
 // Standard libraries
