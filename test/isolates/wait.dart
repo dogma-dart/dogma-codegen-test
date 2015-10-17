@@ -19,7 +19,7 @@ import 'dart:async';
 /// Waits until [milliseconds] have passed.
 Future<Null> wait([int milliseconds = 2000]) {
   var completer = new Completer();
-  var timer = new Timer(new Duration(milliseconds: milliseconds), () {
+  new Timer(new Duration(milliseconds: milliseconds), () {
     completer.complete();
   });
 

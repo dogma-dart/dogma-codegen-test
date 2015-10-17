@@ -59,7 +59,7 @@ Future<bool> runInIsolate(Uri path, bool checked) async {
   var errors = new ReceivePort();
 
   // Create the isolate
-  var isolate = await Isolate.spawnUri(
+  await Isolate.spawnUri(
       path,
       [],
       null,
