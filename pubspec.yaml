@@ -1,5 +1,5 @@
 name: dogma_codegen_test
-version: 0.0.1
+version: 0.1.0
 description: Code generation testing for the Dogma libraries.
 environment:
   sdk: '>=1.12.0 <2.0.0'
