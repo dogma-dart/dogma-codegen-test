@@ -1,11 +1,12 @@
 name: dogma_codegen_test
 version: 0.1.0
+description: Code generation testing for the Dogma libraries.
 author: Don Olmstead <don.j.olmstead@gmail.com>
 homepage: http://dogma-dart.github.io/
-description: Code generation testing for the Dogma libraries.
 environment:
   sdk: '>=1.12.0 <2.0.0'
 dependencies:
+  build: ^0.3.0
   dogma_convert:
     path: ../dogma-convert
   dogma_source_analyzer:
