@@ -20,7 +20,7 @@ import 'typed_metadata.dart';
 // Library contents
 //---------------------------------------------------------------------
 
-/// Checks if the field [a] and [b] are equal.
+/// Checks if the fields [a] and [b] are equal.
 bool fieldMetadataEqual(FieldMetadata a, FieldMetadata b) =>
     metadataEqual(a, b) &&
     typedMetadataEqual(a, b) &&
@@ -33,3 +33,7 @@ bool fieldMetadataEqual(FieldMetadata a, FieldMetadata b) =>
     a.setter == b.setter &&
     a.isFinal == b.isFinal &&
     a.defaultValue == b.defaultValue;
+
+/// Checks if the fields in [a] and [b] are equal.
+bool fieldsEqual(Iterable<FieldMetadata> a, Iterable<FieldMetadata> b) =>
+    metadataValuesEqual/*<FieldMetadata>*/(a, b, fieldMetadataEqual);
