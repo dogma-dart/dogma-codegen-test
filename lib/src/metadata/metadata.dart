@@ -27,7 +27,7 @@ bool metadataValuesEqual/*<T extends Metadata>*/(Iterable<Metadata /*=T*/> a,
   var isEqual = true;
 
   if (a.length != b.length) {
-    print('The number of fields is not equal between metadata');
+    print('The number of fields is not equal between metadata ${a.length} ${b.length}');
 
     isEqual = false;
   }
@@ -46,6 +46,8 @@ bool metadataValuesEqual/*<T extends Metadata>*/(Iterable<Metadata /*=T*/> a,
       if (!isFieldEqual) {
         print('$name is not equal between the metadata');
         isEqual = false;
+      } else {
+        print('$name is equal between the metadata');
       }
     } else {
       print('$name is not equal between the metadata');
