@@ -7,6 +7,9 @@ environment:
   sdk: '>=1.12.0 <2.0.0'
 dependencies:
   build: ^0.3.0
+  build_test: ^0.1.0
+  dogma_codegen:
+    path: ../dogma-codegen
   dogma_convert:
     path: ../dogma-convert
   dogma_source_analyzer:
