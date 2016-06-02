@@ -11,32 +11,14 @@ import 'package:dogma_source_analyzer/metadata.dart';
 
 import 'class_metadata.dart';
 import 'field_metadata.dart';
-import 'metadata.dart';
+import 'function_metadata.dart';
 
 //---------------------------------------------------------------------
 // Library contents
 //---------------------------------------------------------------------
 
 /// Checks if the two libraries, [a] and [b], are equal.
-bool libraryMetadataEqual(LibraryMetadata a, LibraryMetadata b) {
-  var isEqual = libraryFieldsEqual(a, b);
-  isEqual = isEqual && libraryClassesEqual(a, b);
-
-  return isEqual;
-}
-
-/// Checks if the fields contained in the libraries [a] and [b] are equal.
-bool libraryFieldsEqual(LibraryMetadata a, LibraryMetadata b) =>
-    metadataValuesEqual/*<FieldMetadata>*/(
-        a.fields,
-        b.fields,
-        fieldMetadataEqual
-    );
-
-/// Checks if the classes contained in the libraries [a] and [b] are equal.
-bool libraryClassesEqual(LibraryMetadata a, LibraryMetadata b) =>
-    metadataValuesEqual/*<ClassMetadata>*/(
-        a.classes,
-        b.classes,
-        classMetadataEqual
-    );
+bool libraryMetadataEqual(LibraryMetadata a, LibraryMetadata b) =>
+    classesEqual(a.classes, b.classes) &&
+    fieldsEqual(a.fields, b.fields) &&
+    functionsEqual(a.functions, b.functions);
