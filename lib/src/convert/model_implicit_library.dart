@@ -31,68 +31,22 @@ LibraryMetadata modelImplicitLibrary() =>
     );
 
 /// Metadata for the ModelImplicitDecoder class.
-ClassMetadata modelImplicitDecoderMetadata() {
-  var modelType = new TypeMetadata(model.modelImplicitName);
-
-  // Create the supertype
-  var supertype = new TypeMetadata(
-      'Converter',
-      arguments: <TypeMetadata>[new TypeMetadata.map(), modelType]
-  );
-
-  // Create the interfaces
-  var interfaces = <TypeMetadata>[
-     new TypeMetadata(
-         'ModelDecoder',
-         arguments: <TypeMetadata>[modelType]
-     )
-  ];
-
-  // Create default constructor
-  var constructors = <ConstructorMetadata>[
-    new ConstructorMetadata(
-        new TypeMetadata('ModelImplicitDecoder'),
-        isConst: true
-    )
-  ];
-
-  // Create the methods
-  var methods = <MethodMetadata>[
-    new MethodMetadata(
-        'create',
-        modelType,
-        annotations: [override]
-    ),
-    new MethodMetadata(
-        'convert',
-        modelType,
-        parameters: <ParameterMetadata>[
-          new ParameterMetadata('input', new TypeMetadata.map()),
-          new ParameterMetadata(
-              'model',
-              modelType,
-              parameterKind: ParameterKind.positional
-          )
-        ],
-        annotations: [override]
-    )
-  ];
-
-  return new ClassMetadata(
-      'ModelImplicitDecoder',
-      supertype: supertype,
-      interfaces: interfaces,
-      constructors: constructors,
-      methods: methods
-  );
-}
+ClassMetadata modelImplicitDecoderMetadata() =>
+    modelDecoderMetadata(
+        'ModelImplicitDecoder',
+        model.modelImplicitName
+    );
 
 /// Metadata for the ModelImplicitEncoder class.
-ClassMetadata modelImplicitEncoderMetadata() {
-
-}
+ClassMetadata modelImplicitEncoderMetadata() =>
+    modelEncoderMetadata(
+        'ModelImplicitEncoder',
+        model.modelImplicitName
+    );
 
 /// Metadata for the ModelImplicitCodec class.
-ClassMetadata modelImplicitCodecMetadata() {
-
-}
+ClassMetadata modelImplicitCodecMetadata() =>
+    modelCodecMetadata(
+        'ModelImplicitCodec',
+        model.modelImplicitName
+    );
