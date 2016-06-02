@@ -9,26 +9,22 @@
 
 import 'package:dogma_source_analyzer/metadata.dart';
 
+import 'constructor_metadata.dart';
 import 'field_metadata.dart';
 import 'metadata.dart';
+import 'method_metadata.dart';
 
 //---------------------------------------------------------------------
 // Library contents
 //---------------------------------------------------------------------
 
-/// Checks if the class [a] and [b] are equal.
+/// Checks if the classes [a] and [b] are equal.
 bool classMetadataEqual(ClassMetadata a, ClassMetadata b) =>
     metadataEqual(a, b) &&
-    classFieldsEqual(a, b);
+    fieldsEqual(a.fields, b.fields) &&
+    constructorsEqual(a.constructors, b.constructors) &&
+    methodsEqual(a.methods, b.methods);
 
 /// Checks if the classes in [a] and [b] are equal.
 bool classesEqual(Iterable<ClassMetadata> a, Iterable<ClassMetadata> b) =>
     metadataValuesEqual/*<ClassMetadata>*/(a, b, classMetadataEqual);
-
-/// Checks if the fields contained in the classes [a] and [b] are equal.
-bool classFieldsEqual(ClassMetadata a, ClassMetadata b) =>
-    metadataValuesEqual/*<FieldMetadata>*/(
-        a.fields,
-        b.fields,
-        fieldMetadataEqual
-    );
