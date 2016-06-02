@@ -11,5 +11,4 @@ library dogma_codegen_test.build;
 //---------------------------------------------------------------------
 
 export 'src/build/expected_metadata_builder.dart';
-export 'src/build/predefined_metadata_step.dart';
 export 'src/build/test.dart';
