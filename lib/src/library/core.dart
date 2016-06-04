@@ -14,11 +14,11 @@ import 'package:dogma_source_analyzer/metadata.dart';
 //---------------------------------------------------------------------
 
 /// Reference of the [dartConvert] library.
-final UriReferencedMetadata dartConvertReference =
+UriReferencedMetadata dartConvertReference() =>
     new UriReferencedMetadata.withLibrary(dartConvert);
 
 /// Reference of the [dartCollection] library.
-final UriReferencedMetadata dartCollectionReference =
+UriReferencedMetadata dartCollectionReference() =>
     new UriReferencedMetadata.withLibrary(dartCollection);
 
 /// The dart:convert library.

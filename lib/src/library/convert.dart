@@ -14,11 +14,11 @@ import 'package:dogma_source_analyzer/metadata.dart';
 //---------------------------------------------------------------------
 
 /// Reference of the [dogmaSerialize] library.
-final UriReferencedMetadata dogmaSerializeReference =
+UriReferencedMetadata dogmaSerializeReference() =>
     new UriReferencedMetadata.withLibrary(dogmaSerialize);
 
 /// Reference of the [dogmaConvert] library.
-final UriReferencedMetadata dogmaConvertReference =
+UriReferencedMetadata dogmaConvertReference() =>
     new UriReferencedMetadata.withLibrary(dogmaConvert);
 
 /// The dogma_convert.serialize library.
