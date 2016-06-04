@@ -17,6 +17,7 @@ import 'package:build/build.dart';
 import 'package:build_test/build_test.dart';
 import 'package:dogma_codegen/build.dart';
 import 'package:dogma_source_analyzer/metadata.dart';
+import 'package:test/test.dart';
 
 import 'expected_metadata_builder.dart';
 
@@ -51,7 +52,7 @@ Future<Null> testBuilder(SourceBuilder builder,
         inputAssetName: ''
       },
       outputs: {
-        outputAssetName: '',
+        outputAssetName: isNotEmpty,
         '$outputAssetName.test': ExpectedMetadataBuilder.pass
       },
       packageGraph: currentPackageGraph
