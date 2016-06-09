@@ -22,7 +22,7 @@ import 'convert.dart';
 LibraryMetadata modelImplicitLibrary() =>
     new LibraryMetadata(
         join('test/lib/src/convert/model_implicit_convert.dart'),
-        imports: [dogmaConvertReference],
+        imports: [dogmaConvertReference()],
         classes: [
           modelImplicitDecoderMetadata(),
           modelImplicitEncoderMetadata(),
