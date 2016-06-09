@@ -2,6 +2,7 @@
 set -ex
 
 # Clone dogma libraries
+git clone https://github.com/dogma-dart/dogma-codegen.git ../dogma-codegen
 git clone https://github.com/dogma-dart/dogma-convert.git ../dogma-convert
 git clone https://github.com/dogma-dart/dogma-source-analyzer.git ../dogma-source-analyzer
 git clone https://github.com/dogma-dart/dogma-union-type.git ../dogma-union-type
