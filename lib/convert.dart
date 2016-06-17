@@ -11,3 +11,4 @@ library dogma_codegen_test.convert;
 //---------------------------------------------------------------------
 
 export 'src/convert/model_implicit_library.dart';
+export 'src/convert/model_explicit_library.dart';
