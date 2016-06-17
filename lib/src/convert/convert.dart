@@ -108,9 +108,8 @@ ClassMetadata modelEncoderMetadata(String name,
         new TypeMetadata.map(),
         parameters: <ParameterMetadata>[
           new ParameterMetadata(
-              'model',
-              modelType,
-              parameterKind: ParameterKind.positional
+              'input',
+              modelType
           )
         ],
         annotations: [override]
