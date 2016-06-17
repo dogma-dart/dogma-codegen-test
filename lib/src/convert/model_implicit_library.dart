@@ -18,7 +18,7 @@ import 'convert.dart';
 // Library contents
 //---------------------------------------------------------------------
 
-/// Gets a library containing the ModelExplicit converters.
+/// Gets a library containing the ModelImplicit converters.
 LibraryMetadata modelImplicitLibrary() =>
     new LibraryMetadata(
         join('test/lib/src/convert/model_implicit_convert.dart'),
