@@ -23,7 +23,7 @@ const String modelRecursiveName = 'ModelRecursive';
 /// found in tree structures.
 LibraryMetadata modelRecursiveLibrary() =>
     new LibraryMetadata(
-        join('test/libs/src/models/model_recursive.dart'),
+        join('test/lib/src/model/model_recursive.dart'),
         classes: [modelRecursiveMetadata()]);
 
 /// Metadata for the ModelRecursive class.

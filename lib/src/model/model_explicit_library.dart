@@ -23,7 +23,7 @@ const String modelExplicitName = 'ModelExplicit';
 /// Gets a library containing the ModelExplicit class.
 LibraryMetadata modelExplicitLibrary() =>
     new LibraryMetadata(
-        join('test/lib/src/models/model_explicit.dart'),
+        join('test/lib/src/model/model_explicit.dart'),
         imports: [dogmaSerializeReference()],
         classes: [modelExplicitMetadata()]);
 

@@ -11,6 +11,8 @@ import 'package:dogma_convert/serialize.dart';
 import 'package:dogma_source_analyzer/metadata.dart';
 import 'package:dogma_source_analyzer/path.dart';
 
+import '../../library.dart';
+
 //---------------------------------------------------------------------
 // Library contents
 //---------------------------------------------------------------------
@@ -23,7 +25,8 @@ const String modelOptionalName = 'ModelOptional';
 /// This tests models where values are optionally serialized.
 LibraryMetadata modelOptionalLibrary() =>
     new LibraryMetadata(
-        join('test/lib/src/models/model_optional.dart'),
+        join('test/lib/src/model/model_optional.dart'),
+        imports: [dogmaSerializeReference()],
         classes: [modelOptionalMetadata()]);
 
 /// Metadata for the ModelOptional class.
@@ -76,7 +79,7 @@ ClassMetadata modelOptionalMetadata() {
         'm',
         new TypeMetadata.map(new TypeMetadata.string(), new TypeMetadata.num()),
         annotations: [
-          new Serialize.field('m', optional: true, defaultsTo: {a: 'a', b: 'b'})
+          new Serialize.field('m', optional: true, defaultsTo: {'a': 'a', 'b': 'b'})
         ]
     )
   ];

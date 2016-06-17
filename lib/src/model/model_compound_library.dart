@@ -23,7 +23,7 @@ const String modelCompoundName = 'ModelCompound';
 /// Gets a library containing the ModelCompound class.
 LibraryMetadata modelCompoundLibrary() =>
     new LibraryMetadata(
-        join('test/lib/src/models/model_compound.dart'),
+        join('test/lib/src/model/model_compound.dart'),
         imports: [
           new UriReferencedMetadata.withLibrary(enumImplicitLibrary()),
           new UriReferencedMetadata.withLibrary(modelImplicitLibrary())

@@ -20,7 +20,7 @@ const String modelImplicitName = 'ModelImplicit';
 /// Gets a library containing the ModelImplicit class.
 LibraryMetadata modelImplicitLibrary() =>
     new LibraryMetadata(
-        join('test/lib/src/models/model_implicit.dart'),
+        join('test/lib/src/model/model_implicit.dart'),
         classes: [modelImplicitMetadata()]);
 
 /// Metadata for the ModelImplicit class.

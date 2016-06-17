@@ -10,5 +10,9 @@ library dogma_codegen_test.model;
 // Exports
 //---------------------------------------------------------------------
 
-export 'src/model/model_implicit_library.dart';
+export 'src/model/enum_implicit_library.dart';
+export 'src/model/model_compound_library.dart';
 export 'src/model/model_explicit_library.dart';
+export 'src/model/model_implicit_library.dart';
+export 'src/model/model_optional_library.dart';
+export 'src/model/model_recursive_library.dart';
