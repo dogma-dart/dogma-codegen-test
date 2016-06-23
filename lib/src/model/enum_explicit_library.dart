@@ -11,6 +11,8 @@ import 'package:dogma_convert/serialize.dart';
 import 'package:dogma_source_analyzer/metadata.dart';
 import 'package:dogma_source_analyzer/path.dart';
 
+import '../../library.dart';
+
 //---------------------------------------------------------------------
 // Library contents
 //---------------------------------------------------------------------
@@ -22,6 +24,7 @@ const String enumExplicitName = 'EnumExplicit';
 LibraryMetadata enumExplicitLibrary() =>
     new LibraryMetadata(
         join('test/lib/src/model/enum_explicit.dart'),
+        imports: [dogmaSerializeReference()],
         classes: [enumExplicitMetadata()]);
 
 /// Metadata for the EnumImplicit class.
