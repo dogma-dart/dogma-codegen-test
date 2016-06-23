@@ -17,7 +17,7 @@ import 'package:dogma_source_analyzer/path.dart';
 /// The name of the enumeration.
 const String enumImplicitName = 'EnumImplicit';
 
-/// Gets a library containing the EnumExplicit class.
+/// Gets a library containing the EnumImplicit class.
 LibraryMetadata enumImplicitLibrary() =>
     new LibraryMetadata(
         join('test/lib/src/model/enum_implicit.dart'),
@@ -27,9 +27,9 @@ LibraryMetadata enumImplicitLibrary() =>
 ClassMetadata enumImplicitMetadata() {
   var type = new TypeMetadata(enumImplicitName);
   var fields = <FieldMetadata>[
-    new FieldMetadata.field('red', type, isStatic: true, isConst: true),
-    new FieldMetadata.field('green', type, isStatic: true, isConst: true),
-    new FieldMetadata.field('blue', type, isStatic: true, isConst: true)
+    new FieldMetadata.field('red', type, isStatic: true, isConst: true, defaultValue: 0),
+    new FieldMetadata.field('green', type, isStatic: true, isConst: true, defaultValue: 1),
+    new FieldMetadata.field('blue', type, isStatic: true, isConst: true, defaultValue: 2)
   ];
 
   return new EnumMetadata(
