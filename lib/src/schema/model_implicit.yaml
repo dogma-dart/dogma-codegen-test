@@ -1,0 +1,27 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  n:
+    type: number
+  i:
+    type: number
+  d:
+    type: double
+  b:
+    type: bool
+  s:
+    type: string
+  l:
+    type: array
+    items:
+      type: string
+  m:
+    type: object
+required:
+  - n
+  - i
+  - d
+  - b
+  - s
+  - l
+  - m
